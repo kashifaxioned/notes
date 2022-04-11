@@ -84,6 +84,7 @@ sub { bottom: -.25em; }
 /*for all*/
 body {
   box-sizing: border-box;
+  background-color: #7bdaf3;
   font-family: sans-serif;
 }
 
@@ -99,9 +100,8 @@ li {
 
 /*for wrapper*/
 .wrapper {
-  max-width: 1360px;
-  width: 86%; 
-  margin: 0 auto;
+  width: 95%; 
+  margin: 50px auto;
 }
 /*=================================
   Header styling starts here
@@ -120,11 +120,90 @@ li {
   main styling starts here
 =================================*/
 
+.note-container {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
 
+.notes {
+  display: block;
+  box-sizing: border-box;
+  flex-basis: calc(25% - 40px);
+  animation: grow .3s ease-in-out;
+  transition: .1s ease-in-out;
+}
 
+.control-div {
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #9ec862;
+}
 
+.btn { 
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  overflow: hidden;
+  text-indent: -15px;
+}
 
+.btn::after {
+  margin-left: 10px;
+  font-family: "FontAwesome";
+  font-size: 20px;
+}
 
+.edit-btn::after { content: "\f044"; }
+
+.delete-btn::after { content: "\f1f8"; }
+
+.note-text {
+  min-height: 200px;
+  background-color: #fff;
+}
+
+.note-text, textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 10px;
+  border: none;
+  font-family: inherit;
+  font-size: 20px;
+  outline: none;
+}
+
+.addNotes-btn {
+  padding: 10px 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: none;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background-color: #9ec862;
+  color: #fff;
+  font-size: 16px;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+.addNotes-btn::after {
+  content: "\f055";
+  font-family: "FontAwesome";
+  font-size: 20px;
+  color: #fff;
+}
+
+.hide { display: none; }
+
+@keyframes grow {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
 
 
 /*=================================
